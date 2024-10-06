@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/cross.ico</file>
+        <file>icons/questionmark.ico</file>
+        <file>icons/klimov.jpg</file>
+    </qresource>
+</RCC>

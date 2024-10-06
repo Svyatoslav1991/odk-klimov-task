@@ -10,7 +10,7 @@ TimerStatsCollector::TimerStatsCollector(QObject *parent) : QObject(parent)
 
 //---------------------------------------------------------------------------------------
 
-
+//Запускает отслеживание временных интервалов
 void TimerStatsCollector::startTracking()
 {
     LARGE_INTEGER currentTime;
@@ -26,7 +26,7 @@ void TimerStatsCollector::startTracking()
 
 //---------------------------------------------------------------------------------------
 
-
+//Получить минимальное и максимальное значения интервалов
 std::pair<double, double> TimerStatsCollector::getMinMaxIntervals() const
 {
     if (m_intervals.empty()) return {0.0, 0.0};
@@ -37,7 +37,7 @@ std::pair<double, double> TimerStatsCollector::getMinMaxIntervals() const
 
 //---------------------------------------------------------------------------------------
 
-
+//Получить средний временной интервал
 double TimerStatsCollector::getAverageInterval() const
 {
     if (m_intervals.empty()) return 0.0;
@@ -48,7 +48,7 @@ double TimerStatsCollector::getAverageInterval() const
 
 //---------------------------------------------------------------------------------------
 
-
+// Проверяет, были ли пропущены временные слоты
 bool TimerStatsCollector::hasMissedTimeslot() const
 {
     double avg = getAverageInterval();
@@ -62,7 +62,7 @@ bool TimerStatsCollector::hasMissedTimeslot() const
 
 //---------------------------------------------------------------------------------------
 
-
+//Получить вектор временных интервалов
 std::vector<double> TimerStatsCollector::getIntervals() const
 {
     return m_intervals;

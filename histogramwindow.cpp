@@ -30,6 +30,7 @@ HistogramWindow::~HistogramWindow() {
 
 //-------------------------------------------------------------------------------
 
+//Устанавливить данные для гистограммы
 void HistogramWindow::setHistogramData(const std::vector<double>& data)
 {
     QBarSet *set = new QBarSet("Интервалы");
